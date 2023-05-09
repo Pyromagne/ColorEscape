@@ -8,4 +8,4 @@ ColorEscape.o: ColorEscape.cpp
 	g++ -c ColorEscape.cpp
 
 clean:
-	rm *.o output
+	rm *.o *.exe output

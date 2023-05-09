@@ -7,7 +7,7 @@ const std::string COLRES = "\x1B[0m";
 
 namespace color
 {
-    void setForegoundColor(int);
+    void setForegroundColor(int);
     void setBackgroundColor(int);
     void reset(void);
     std::string colorIn(int, std::string);

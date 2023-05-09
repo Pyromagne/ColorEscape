@@ -2,7 +2,7 @@
 
 namespace color
 {
-    void setForegoundColor(int color)
+    void setForegroundColor(int color)
     {
         if (color >= 0 && color <= 255)
         {
