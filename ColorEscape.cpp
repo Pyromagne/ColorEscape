@@ -8,7 +8,7 @@ void enable_vtp(void)
     dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
     SetConsoleMode(hOut, dwMode);
 }
-    
+
 
 namespace color
 {
