@@ -2,3 +2,5 @@
 output
 *.o
 *.exe
+main.cpp
+makefile
