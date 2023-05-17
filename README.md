@@ -17,19 +17,19 @@ To use the ColorEscape library, include the "ColorEscape.hpp" header file in you
 ### Example
 
 ```cpp
-#include "ColorEscape.hpp"
 #include <iostream>
+#include "ColorEscape.hpp"
 
 int main()
 {
-    std::cout << "Hello, " << color::colorIn(33, "world") << "!" << std::endl;
-    color::setForegroundColor(202);
+    std::cout << "Hello, " << ce::colorIn(33, "world") << "!" << std::endl;
+    ce::setForegroundColor(202);
     std::cout << "This text has a foreground color of 202." << std::endl;
-    color::setBackgroundColor(67);
+    ce::setBackgroundColor(67);
     std::cout << "This text has a background color of 67." << std::endl;
-    color::reset();
+    ce::reset();
     std::cout << "This text has the default colors." << std::endl;
-    std::cout << color::colorIn2(221, 45, "This text has a foreground color of 221 and a background color of 45.") << std::endl;
+    std::cout << ce::colorIn2(221, 45, "This text has a foreground color of 221 and a background color of 45.") << std::endl;
     return 0;
 }
 ```

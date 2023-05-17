@@ -10,25 +10,31 @@ void enable_vtp(void)
 }
 
 
-namespace color
+namespace ce
 {
-    void setForegroundColor(int color)
+    void setForegroundColor(int colorValue)
     {
-        if (color >= 0 && color <= 255)
+        if (colorValue >= 0 && colorValue <= 255)
         {
-            std::cout << "\x1B[38;5;" + std::to_string(color) + 'm';
+            std::cout << "\x1B[38;5;" + std::to_string(colorValue) + 'm';
         }
-        //else throw std::invalid_argument("Invalid color value");
+        else
+        {
+            std::cerr << "Invalid color value: " << colorValue << std::endl;
+        }
 
     }
 
-    void setBackgroundColor(int color)
+    void setBackgroundColor(int colorValue)
     {
-        if (color >= 0 && color <= 255)
+        if (colorValue >= 0 && colorValue <= 255)
         {
-            std::cout << "\x1B[48;5;" + std::to_string(color) + 'm';
+            std::cout << "\x1B[48;5;" + std::to_string(colorValue) + 'm';
         }
-        //else throw std::invalid_argument("Invalid color value");
+        else
+        {
+            std::cerr << "Invalid color value: " << colorValue << std::endl;
+        }
     }
 
     void reset(void)
@@ -36,25 +42,45 @@ namespace color
         std::cout << "\x1B[0m";
     }
 
-    std::string colorIn(int value, std::string text)
+    std::string colorIn(int colorValue, std::string text)
     {
-        if (value >= 0 && value <= 255)
+        std::string sColor;
+        if (colorValue >= 0 && colorValue <= 255)
         {
-            std::string color = "\x1B[38;5;" + std::to_string(value) + 'm';
-            return COLRES + color + text + COLRES;
+            sColor = "\x1B[38;5;" + std::to_string(colorValue) + 'm';
+            return RESET_COLOR + sColor + text + RESET_COLOR;
         }
-        else return "COLOR_OUT_OF_BOUND";
+        else
+        {
+            std::cerr << "Invalid color value: " << colorValue << std::endl;
+        }
+        return RESET_COLOR + sColor + text + RESET_COLOR;
     }
 
-    std::string colorIn2(int valueF, int valueB, std::string text)
+    std::string colorIn2(int colorValueF, int colorValueB, std::string text)
     {
-        if ((valueF >= 0 && valueF <= 255) && (valueB >= 0 && valueB <= 255))
+        std::string sColorValueF;
+        std::string sColorValueB;
+        if ((colorValueF >= 0 && colorValueF <= 255) && (colorValueB >= 0 && colorValueB <= 255))
         {
-            std::string colorF = "\x1B[38;5;" + std::to_string(valueF) + 'm';
-            std::string colorB = "\x1B[48;5;" + std::to_string(valueB) + 'm';
+            sColorValueF = "\x1B[38;5;" + std::to_string(colorValueF) + 'm';
+            sColorValueB = "\x1B[48;5;" + std::to_string(colorValueB) + 'm';
 
-            return COLRES + colorF + colorB + text + COLRES;
+            return RESET_COLOR + sColorValueF + sColorValueB + text + RESET_COLOR;
         }
-        else return "COLOR_OUT_OF_BOUND";
+        else
+        {   
+            std::cerr << "Invalid color value: " << colorValueF << " or " << colorValueB <<std::endl;
+        }
+        return RESET_COLOR + sColorValueF + sColorValueB + text + RESET_COLOR;
     }
 }
+
+
+// void setForegroundColor(std::ostream& os, int color)
+// {
+//     if (color >= 0 && color <= 255)
+//     {
+//         os << "\x1B[38;5;" + std::to_string(color) + 'm';
+//     }
+// }
