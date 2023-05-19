@@ -1,6 +1,7 @@
 .vscode/
-output
-*.o
-*.exe
-main.cpp
-makefile
+archive/
+bin/
+obj/
+*.cbp
+*.depend
+*.layout
