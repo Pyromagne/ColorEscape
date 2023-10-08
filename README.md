@@ -1,6 +1,6 @@
 # ColorEscape
 
-ColorEscape is a C++ library that allows you to print text with colors and backgrounds on the terminal. It provides several functions to set the foreground and background colors of the text and to reset the colors back to their defaults. Additionally, it has two functions that take a text string and a color value, and return the text wrapped in the color codes.
+ColorEscape is a C++ library that allows you to print text with colors and backgrounds on a terminal based application. It provides several functions to set the foreground and background colors of the text and to reset the colors back to their defaults. Additionally, it has two functions that take a text string and a color value, and return the text wrapped in the color codes.
 
 ## Usage
 
