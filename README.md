@@ -27,8 +27,6 @@ int main()
     std::cout << "This text has a foreground color of 202." << std::endl;
     ce::setBackgroundColor(67);
     std::cout << "This text has a background color of 67." << std::endl;
-    ce::reset();
-    std::cout << "This text has the default colors." << std::endl;
     std::cout << ce::colorIn2(221, 45, "This text has a foreground color of 221 and a background color of 45.") << std::endl;
     return 0;
 }
