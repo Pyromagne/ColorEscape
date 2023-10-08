@@ -34,6 +34,12 @@ int main()
 }
 ```
 
+### Screenshot
+
+<p align="center">
+    <image src="sample.png">
+</p>
+
 ## Implementation Details
 
 The ColorEscape library is implemented as a single header file, "ColorEscape.hpp", which contains all the function definitions and necessary includes. The library uses ANSI escape codes to set the text color and background color. The `colorIn()` and `colorIn2()` functions return a string with the appropriate color codes wrapped around the text.

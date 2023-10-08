@@ -2,6 +2,7 @@
 archive/
 bin/
 obj/
+sample/
 *.cbp
 *.depend
 *.layout
