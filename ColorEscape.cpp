@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////
 // MIT License
 //
-// Copyright (c) 2023 Pyromagne
+// Copyright (c) 2024 Pyromagne
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@
 // SOFTWARE.
 ////////////////////////////////////////////////////////////
 
-#include "ColorEscape.hpp"
+#include "colorescape.hpp"
 
 ////////////////////////////////////////////////////////////
 void enable_vtp(void)
@@ -104,7 +104,7 @@ namespace ce
             return RESET_COLOR + sColorValueF + sColorValueB + text + RESET_COLOR;
         }
         else
-        {   
+        {
             std::cerr << "Invalid color value: " << colorValueF << " or " << colorValueB <<std::endl;
         }
         return RESET_COLOR + sColorValueF + sColorValueB + text + RESET_COLOR;

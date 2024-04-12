@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////
 // MIT License
 //
-// Copyright (c) 2023 Pyromagne
+// Copyright (c) 2024 Pyromagne
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -33,32 +33,32 @@
 #ifndef COLORESCAPE_HPP
     #define COLORESCAPE_HPP
 
-        #include <iostream>
-        #include <string>
-        #include <windows.h>
+    #include <iostream>
+    #include <string>
+    #include <windows.h>
 
-        void enable_vtp(void);
+    void enable_vtp(void);
 
-        namespace ce
+    namespace ce
+    {
+        enum Color
         {
-            enum Color
-            {
-                Red = 160,
-                Orange = 208,
-                Yellow = 220,
-                Green = 28,
-                Blue = 27,
-                Purple = 127,
-                White = 255,
-                Black = 0,
-            };
+            Red = 160,
+            Orange = 208,
+            Yellow = 220,
+            Green = 28,
+            Blue = 27,
+            Purple = 127,
+            White = 255,
+            Black = 0,
+        };
 
-            void setForegroundColor(int);
-            void setBackgroundColor(int);
-            void reset(void);
-            std::string colorIn(int, std::string);
-            std::string colorIn2(int, int, std::string);
-        }
+        void setForegroundColor(int);
+        void setBackgroundColor(int);
+        void reset(void);
+        std::string colorIn(int, std::string);
+        std::string colorIn2(int, int, std::string);
+    }
 #endif
 ////////////////////////////////////////////////////////////
 
